@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meus Links — Página de Acesso</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,#071023 0%, #071827 100%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .card{width:100%;max-width:760px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:28px;box-shadow:0 6px 30px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.03)}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:#041021;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+    ul.links{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:12px}
+    .link-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .favicon{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;font-weight:600}
+    .meta{flex:1;min-width:0}
+    .meta b{display:block;font-size:15px}
+    .meta small{color:var(--muted);display:block;margin-top:4px}
+    .actions{display:flex;gap:8px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:inherit;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#04212a;border:none}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header>
+      <div class="logo">ML</div>
+      <div>
+        <h1>Meus Links — Página de Acesso</h1>
+        <p class="lead">Acesse facilmente meus principais links abaixo 👇</p>
+      </div>
+    </header>
+
+    <ul class="links">
+      <li class="link-item">
+        <div class="favicon">PG</div>
+        <div class="meta">
+          <b>Página de Pagamento</b>
+          <small>Acesso Premium</small>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyToClipboard('https://pay.kiwify.com.br/ImqMfX2?afid=0dkoQCbw')">Copiar</button>
+          <button class="btn primary" onclick="openLink('https://pay.kiwify.com.br/ImqMfX2?afid=0dkoQCbw')">Abrir</button>
+        </div>
+      </li>
+    </ul>
+
+    <footer>
+      <div>Feito com ♥ — personalize à vontade.</div>
+    </footer>
+  </main>
+
+  <script>
+    function openLink(url){ window.open(url, '_blank', 'noopener'); }
+    function copyToClipboard(text){ navigator.clipboard.writeText(text).then(()=>{ alert('Link copiado: '+text); }).catch(()=>{ prompt('Copie manualmente:', text); }); }
+  </script>
+</body>
+</html>
